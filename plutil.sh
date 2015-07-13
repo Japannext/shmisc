@@ -1,29 +1,15 @@
 plist_get() {
-	local file=$1
-	local key=$2
-	awk '
-		function curkey(rs) {
-			for (i = 0; i++ < n;)
-				rs = rs sprintf("/%s",kn[i])
-			return rs
-		}
-		/<dict>/ {n++}
-		/<\/dict>/ {n--}
-		/<key>/ {
-			gsub(/[\t ]*<\/*\w+>[\t ]*/,"");
-			kn[n]=$0
-		}
-		/<(string|real|integer|date)>/ {
-			if (curkey() == key) {
-				gsub(/[\t ]*<\/*\w+>[\t ]*/,"");
-				print
-			}
-		}
-		/<(true|false) *\/>/ {
-			if (curkey() == key) {
-				gsub(/[\t<\/>\t ]*/,"");
-				print
-			}
-		}
-	' key=$key $file
+	python << __EOF__
+import plistlib, sys
+data = plistlib.readPlist("$1")
+key = "$2".lstrip("/").split("/")
+while key:
+	part = key.pop(0)
+	if isinstance(data, list):
+		part = int(part)
+	data = data[part]
+if isinstance(data, list) or isinstance(data, dict):
+	sys.exit(1)
+print data
+__EOF__
 }
