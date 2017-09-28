@@ -1,12 +1,12 @@
 -include Makefile.inc
 -include version.mk
 
-ALL_BINS = shproc
+BINS = shproc
 
-all: $(ALL_BINS)
+all: $(BINS)
 
 clean:
-	rm -f $(ALL_BINS)
+	rm -f $(BINS)
 
 tag: all
 	$(GIT) tag $(VERSION) -m "Tagging $(VERSION) release"
