@@ -11,7 +11,7 @@ clean:
 tag: all
 	$(GIT) tag $(VERSION) -m "Tagging $(VERSION) release"
 
-.PHONY: clean tag
+.PHONY: all clean tag
 
 shproc: shproc.py
 	cat $^ > $@
