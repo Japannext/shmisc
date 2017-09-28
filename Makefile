@@ -1,3 +1,4 @@
+-include Makefile.inc
 -include version.mk
 
 ALL_BINS = shproc
@@ -8,7 +9,7 @@ clean:
 	rm -f $(ALL_BINS)
 
 tag: all
-	git tag shmisc-$(VERSION) -m "Tagging $(VERSION) release"
+	$(GIT) tag $(VERSION) -m "Tagging $(VERSION) release"
 
 .PHONY: clean tag
 
