@@ -1,4 +1,4 @@
-VERSION = $(shell cat VERSION)
+-include version.mk
 
 ALL_BINS = shproc
 
