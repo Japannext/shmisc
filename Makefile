@@ -6,7 +6,7 @@ BINS = shproc
 all: $(BINS)
 
 shproc: shproc.py
-	cat $^ > $@
+	cat $< > $@
 	@chmod +x $@
 
 clean:
