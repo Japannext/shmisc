@@ -1,1 +1,1 @@
-VERSION = $(shell cat $(TOPDIR)VERSION)
+VERSION = $(shell cat $(TOPDIR)/VERSION)
