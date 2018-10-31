@@ -1,5 +1,5 @@
--include Makefile.inc
--include version.mk
+include Makefile.inc
+include version.mk
 
 BINS = shproc
 
