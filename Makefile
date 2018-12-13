@@ -12,7 +12,7 @@ shproc: shproc.py
 clean:
 	rm -f $(BINS)
 
-tag: all
+tag:
 	$(GIT) tag $(VERSION) -m "Tagging $(VERSION) release"
 
 .PHONY: all clean tag
