@@ -11,6 +11,7 @@ shproc: shproc.py
 
 clean:
 	rm -f $(BINS)
+	find . -type f -name "*.pyc" -exec rm {} \;
 
 tag:
 	$(GIT) tag $(VERSION) -m "Tagging $(VERSION) release"
