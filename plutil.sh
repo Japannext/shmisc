@@ -1,3 +1,6 @@
+# Copyright 2021 Japannext Co., Ltd. <https://www.japannext.co.jp/>
+# SPDX-License-Identifier: Apache-2.0
+
 plist_get() {
 	python << __EOF__
 import plistlib, sys
