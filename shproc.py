@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 #
 # Copyright 2021 Japannext Co., Ltd. <https://www.japannext.co.jp/>
 # SPDX-License-Identifier: Apache-2.0

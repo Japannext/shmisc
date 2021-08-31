@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 plist_get() {
-	python << __EOF__
+	python2 << __EOF__
 import plistlib, sys
 data = plistlib.readPlist("$1")
 key = "$2".lstrip("/").split("/")
